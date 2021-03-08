@@ -5,11 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./static/css/normalize.css" />
-    <link rel="stylesheet" href="./static/css/index.css" />
-    <style></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/css/normalize.css" />
+    <link rel="stylesheet" href="../static/css/index.css" />
   </head>
   <body>
-    <p>{{ sentence }}</p>
+    <div class="container">
+      <form>
+        <div>
+          <label for="nameInput">Name</label>
+          <input
+            type="text"
+            id="my_text"
+            placeholder="où est la tour eiffel ?"
+          />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="successAlert" class="alert alert-success" role="alert"></div>
+      <div id="errorAlert" class="alert alert-danger" role="alert"></div>
+      <div id="map"></div>
+    </div>
+    <script src="../static/js/index.js"></script>
   </body>
 </html>

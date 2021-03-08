@@ -11,7 +11,7 @@ class Parser:
         self.initial_text = str(texte)
 
     def __remove_special_caracters(self):
-        self.initial_text = re.sub("[^A-Za-z0-9]+", " ", self.initial_text)
+        self.initial_text = re.sub("[^A-Za-z0-9éèçîï]+", " ", self.initial_text)
 
     def __check_size(self):
         self.initial_text = self.initial_text.lower()
@@ -37,7 +37,3 @@ class Parser:
         self.__delete_text()
         self.__fusion_text()
         return self.ending_text
-
-
-test = Parser()
-print(test.my_parser("hello, je souhaite aller à la tour eiffel ?"))

@@ -1,3 +1,28 @@
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: blue;
+}
+
 p {
   background-color: yellow;
+}
+
+.alert {
+  width: 1000px;
+  overflow: auto;
+}
+
+#successAlert {
+  background-color: rgb(60, 221, 68);
+  width: 1000px;
+  height: 100px;
+  overflow: auto;
+}
+
+#errorAlert {
+  background-color: red;
+  width: 1000px;
+  height: 100px;
+  overflow: auto;
 }
