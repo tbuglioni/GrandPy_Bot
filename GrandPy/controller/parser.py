@@ -15,7 +15,8 @@ class Parser:
 
     def __remove_special_caracters(self):
         """ remove special characters """
-        self.initial_text = re.sub("[^A-Za-z0-9éèçîï]+", " ", self.initial_text)
+        valide_caracters = "[^A-Za-z0-9éèçîï]+"
+        self.initial_text = re.sub(valide_caracters, " ", self.initial_text)
 
     def __check_size(self):
         """ check str size and def size=lower """

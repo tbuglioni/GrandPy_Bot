@@ -1,10 +1,6 @@
 from GrandPy.controller.api_wiki import MyWiki
 import wikipedia
 
-# set of data :
-# (43.5836, 7.10905) "Gare d'Antibes" "https://fr.wikipedia.org/wiki/Gare_d%27Antibes"
-# (48.85837009999999, 2.2944813) "https://fr.wikipedia.org/wiki/Tour_Eiffel"
-
 
 def test_wiki_is_ok(monkeypatch):
     def mock_set_langue(*args, **kwargs):

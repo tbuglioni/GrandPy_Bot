@@ -1,7 +1,21 @@
-$("#map").hide();
 $(document).ready(function() {
 
+	
 	$('form').on('submit', function(event) {
+		
+		$('#dialogue_zone').append(
+			$('<div/>')
+			  .addClass("user_bubble")
+			  .append("<p/>")
+				.text($('#my_text').val())
+		  );
+		
+		$('#dialogue_zone').append(
+			$('<div/>')
+			  .addClass("bot_bubble")
+			  .append("<p/>")
+				.text("hum...hum...")
+		  );
 
 		$.ajax({
 			data : {
@@ -11,19 +25,24 @@ $(document).ready(function() {
 			url : '/process'
 		})
 		.done(function(data) {
-
+			$( '.bot_bubble:last' ).remove();
+			$('#dialogue_zone').append(
+				$('<div/>')
+				  .addClass("bot_bubble")
+			  );
 			if (data.error) {
-				$('#errorAlert').text(data.error);
+				$('.bot_bubble:last').text(data.error);
 				
 			}
 			else {
-				$('#successAlert').text(data.name);
-				$('#successAlert').append(data.lat);
-				$('#successAlert').append(data.lng);
-				$('#successAlert').append(data.formated_location);
-				$('#successAlert').append(data.wiki_summary);
-				$('#successAlert').append(data.wiki_link);
-				$("#map").show();
+				$('.bot_bubble:last').text(data.name);
+				$('.bot_bubble:last').append(data.wiki_summary);
+				$('.bot_bubble:last').append(data.wiki_link);
+				
+				$('#dialogue_zone').append(
+					$('<div/>')
+					  .addClass("map")
+				  );
 				
 				function myMap(){
 					const center = { lat: data.lat, lng: data.lng };
@@ -33,7 +52,7 @@ $(document).ready(function() {
 					version: "weekly",
 					});
 					loader.load().then(() => {
-					  map = new google.maps.Map(document.getElementById("map"), {
+					  map = new google.maps.Map($(".map:last")[0], {
 						center,
 						zoom,
 					  });

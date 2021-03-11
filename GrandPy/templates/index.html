@@ -8,25 +8,86 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/@googlemaps/js-api-loader@^1.2.0/dist/index.min.js"></script>
     <link rel="stylesheet" href="../static/css/normalize.css" />
+
     <link rel="stylesheet" href="../static/css/index.css" />
   </head>
   <body>
-    <div class="container">
-      <form>
-        <div>
-          <label for="nameInput">Name</label>
-          <input
-            type="text"
-            id="my_text"
-            placeholder="où est la tour eiffel ?"
+    <div class="wrapper">
+      <header class="page-header">
+        <nav>
+          <img
+            id="logo"
+            src="../static/image/detective-1424831_640.png"
+            alt=""
+            class="spinner_slow"
           />
+          <h1 class="page-header-title">GrandPy</h1>
+          <p>
+            Coucou mon petit, tu savais que je connais la plupart des lieux de
+            France ? <br />
+            Si si demande moi un endroit.
+          </p>
+        </nav>
+      </header>
+      <main class="page-main">
+        <div>
+          <div id="dialogue_zone">
+            <div class="bot_bubble">
+              <p>aller aller une petite question ? non ?</p>
+            </div>
+          </div>
+          <form id="text_zone">
+            <label for="#my_text"
+              ><img
+                src="../static/image/create-outline.svg"
+                alt="un triangle aux trois côtés égaux"
+                height="30px"
+                width="30px"
+                class="spinner"
+            /></label>
+
+            <div>
+              <input
+                type="text"
+                class="input_text_zone"
+                id="my_text"
+                placeholder="où est la tour eiffel ?"
+                autofocus
+                required
+              />
+            </div>
+            <button type="submit">Submit</button>
+          </form>
         </div>
-        <button type="submit">Submit</button>
-      </form>
-      <div id="successAlert" class="alert alert-success" role="alert"></div>
-      <div id="errorAlert" class="alert alert-danger" role="alert"></div>
-      <div id="map"></div>
+      </main>
+      <footer class="page-footer">
+        <small>© Copyright 2021. All rights reserved.</small>
+        <ul>
+          <li>
+            <a href="" target="_blank">
+              <i class="icon ion-logo-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="" target="_blank">
+              <ion-icon name="logo-twitter"></ion-icon>
+              <i class="icon ion-logo-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="" target="_blank">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/tbuglioni" target="_blank">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </footer>
     </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="../static/js/index.js"></script>
   </body>
 </html>

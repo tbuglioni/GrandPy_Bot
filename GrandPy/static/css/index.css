@@ -1,28 +1,216 @@
-#map {
-  width: 100%;
-  height: 400px;
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,700");
+
+:root {
+  --main-white-color: rgb(242, 242, 242);
+  --main-white-opacity: rgba(242, 242, 242, 0.5);
+  --main-black-color: black;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+  padding: 5px 18px;
+  border: 1px solid;
+  border-radius: 5px;
+  height: 2em;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font: 16px/1.5 "Dosis", sans-serif;
+  /*IE FIX*/
+  /*display: flex;
+  flex-direction: column;*/
+}
+
+/* CONTAINER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrapper > * {
+  padding: 20px;
+}
+
+/* HEADER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-header {
+  background: var(--main-white-color);
+}
+.page-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.page-header-title {
+  flex: 1;
+  font-size: 2em;
+}
+#logo {
+  width: 5rem;
+  height: 5rem;
+}
+/* MAIN
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 350px;
+  background: url(../image/old-books-436498_1920.jpg) no-repeat center / cover;
+  background-blend-mode: luminosity;
+  color: var(--main-white-color);
+}
+
+.page-main h1 {
+  margin-bottom: 20px;
+}
+
+.page-main p + p {
+  margin-top: 10px;
+}
+#dialogue_zone {
+  background-color: var(--main-white-opacity);
+  min-height: 30vh;
+  max-height: 60vh;
+  width: 100vw;
+  border-radius: 5px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.bot_bubble {
+  flex-direction: row;
   background-color: blue;
+  margin: 0.5em;
+  width: 45%;
+  padding: 0.5em;
+  border-radius: 10px;
+  word-break: break-all;
+}
+.user_bubble {
+  width: 45%;
+  background-color: var(--main-black-color);
+  border-radius: 10px;
+  align-self: flex-end;
+  padding: 0.5em;
 }
 
-p {
-  background-color: yellow;
+#text_zone {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--main-white-color);
+  width: 100vw;
+  border-radius: 10px;
+  margin: auto;
 }
 
-.alert {
-  width: 1000px;
-  overflow: auto;
+.input_text_zone {
+  background-color: var(--main-white-color);
+  border: none;
+  outline: none;
+  width: 60vw;
+  margin: 5px;
+  align-items: flex-start;
 }
 
-#successAlert {
-  background-color: rgb(60, 221, 68);
-  width: 1000px;
-  height: 100px;
-  overflow: auto;
+.map {
+  width: 100vw;
+  border-radius: 5px;
+  min-height: 40vh;
+  background-color: var(--main-white-opacity);
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
 }
 
-#errorAlert {
-  background-color: red;
-  width: 1000px;
-  height: 100px;
-  overflow: auto;
+.spinner_speed {
+  animation: spin 2s linear infinite;
+}
+
+.spinner_slow {
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* FOOTER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-footer {
+  display: flex;
+  flex-direction: column-reverse;
+  background: var(--main-white-color);
+}
+
+.page-footer ul {
+  display: flex;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.page-footer ul li:not(:last-child) {
+  margin-right: 20px;
+}
+
+/* MQ
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (min-width: 550px) {
+  .page-header ul {
+    width: auto;
+    margin-top: 0;
+  }
+  .page-header .cta-contact {
+    order: 1;
+  }
+  .page-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .page-footer ul {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+  #dialogue_zone,
+  .map,
+  #text_zone {
+    width: 80vw;
+  }
 }
