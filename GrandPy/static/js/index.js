@@ -16,6 +16,7 @@ $(document).ready(function() {
 			  .append("<p/>")
 				.text("hum...hum...")
 		  );
+		$('#dialogue_zone').scrollTop($('#dialogue_zone')[0].scrollHeight);
 
 		$.ajax({
 			data : {
@@ -37,8 +38,7 @@ $(document).ready(function() {
 			else {
 				$('.bot_bubble:last').text(data.name);
 				$('.bot_bubble:last').append(data.wiki_summary);
-				$('.bot_bubble:last').append(data.wiki_link);
-				
+				$('.bot_bubble:last').append(data.wiki_link);				
 				$('#dialogue_zone').append(
 					$('<div/>')
 					  .addClass("map")
@@ -66,12 +66,13 @@ $(document).ready(function() {
 					}
 			
 				myMap()
+				$('#dialogue_zone').scrollTop($('#dialogue_zone')[0].scrollHeight);
 				
 				
 			}
 
 		});
-
+		
 		event.preventDefault();
 
 	});
