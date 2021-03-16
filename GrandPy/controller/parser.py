@@ -1,4 +1,5 @@
 import re
+
 from GrandPy.constante import stop_word
 
 
@@ -41,9 +42,13 @@ class Parser:
     def my_parser(self, initial_text):
         """ run all previous fonction """
         self.__get_text(initial_text)
-        self.__remove_special_caracters()
-        self.__check_size()
-        self.__split_text()
-        self.__delete_text()
-        self.__fusion_text()
-        return self.ending_text
+
+        if not self.initial_text or len(self.initial_text) == 0:
+            raise ValueError("no text to parse :/")
+        else:
+            self.__remove_special_caracters()
+            self.__check_size()
+            self.__split_text()
+            self.__delete_text()
+            self.__fusion_text()
+            return self.ending_text

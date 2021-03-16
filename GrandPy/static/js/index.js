@@ -36,9 +36,16 @@ $(document).ready(function() {
 				
 			}
 			else {
-				$('.bot_bubble:last').text(data.name);
-				$('.bot_bubble:last').append(data.wiki_summary);
-				$('.bot_bubble:last').append(data.wiki_link);				
+				$('.bot_bubble:last').append($('<p/>')).append(data.random_text);
+				$('.bot_bubble:last').append($('<p/>')).append(data.wiki_summary);
+				$('.bot_bubble:last').append(
+					$('<a/>')
+						.attr({
+							href: data.wiki_link, 
+							target:"_blank" 
+						})
+						.text(" Lien vers wikipedia")
+					);				
 				$('#dialogue_zone').append(
 					$('<div/>')
 					  .addClass("map")

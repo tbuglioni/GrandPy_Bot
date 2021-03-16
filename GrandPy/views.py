@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, request, render_template
 from GrandPy.controller.process_post import ProcessPost
 
 
@@ -12,9 +12,9 @@ def index():
 
 @app.route("/process", methods=["POST"])
 def process():
-    my_process = ProcessPost()
+    my_process = ProcessPost(request.form["my_text"])
     return my_process.processing()
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)

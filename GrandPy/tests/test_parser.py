@@ -1,4 +1,5 @@
 from GrandPy.controller.parser import Parser
+import pytest
 
 
 def test_parser_is_ok_1():
@@ -54,3 +55,9 @@ def test_parser_with_signs():
         test.my_parser("HELLO, je souhaite aLler à la tour eiffel ?./+/><!°?")
         == "tour eiffel"
     )
+
+
+def test_parser_empty():
+    with pytest.raises(ValueError):
+        test = Parser()
+        result = test.my_parser("")
