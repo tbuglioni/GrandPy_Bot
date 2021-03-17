@@ -109,7 +109,8 @@ body {
   width: 45%;
   padding: 0.5em;
   border-radius: 10px;
-  word-break: break-all;
+  word-break: normal;
+  hyphens: auto;
 }
 .user_bubble {
   width: 45%;
@@ -204,7 +205,7 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) and (min-height:300px){
+@media screen and (min-width: 768px) and (min-height: 300px) {
   body {
     font-size: 18px;
   }
