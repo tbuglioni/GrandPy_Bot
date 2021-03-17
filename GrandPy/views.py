@@ -14,7 +14,3 @@ def index():
 def process():
     my_process = ProcessPost(request.form["my_text"])
     return my_process.processing()
-
-
-if __name__ == "__main__":
-    app.run(debug=False)
