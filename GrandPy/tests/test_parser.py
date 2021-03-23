@@ -60,4 +60,4 @@ def test_parser_with_signs():
 def test_parser_empty():
     with pytest.raises(ValueError):
         test = Parser()
-        result = test.my_parser("")
+        test.my_parser("")

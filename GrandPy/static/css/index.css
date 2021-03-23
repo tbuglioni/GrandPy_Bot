@@ -149,6 +149,10 @@ body {
   border-radius: 5px;
 }
 
+#svg_input_write {
+  height: 30px;
+  width: 30px;
+}
 .spinner_speed {
   animation: spin 2s linear infinite;
 }
