@@ -26,6 +26,7 @@ $(document).ready(function() {
 			url : '/process'
 		})
 		.done(function(data) {
+			document.querySelector("form").reset();
 			$( '.bot_bubble:last' ).remove();
 			$('#dialogue_zone').append(
 				$('<div/>')
@@ -74,6 +75,7 @@ $(document).ready(function() {
 			
 				myMap()
 				$('#dialogue_zone').scrollTop($('#dialogue_zone')[0].scrollHeight);
+				
 				
 				
 			}

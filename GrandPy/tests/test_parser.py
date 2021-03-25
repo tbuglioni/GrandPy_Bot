@@ -51,11 +51,6 @@ def test_parser_with_signs():
     expected_result = "tour eiffel"
     assert result == expected_result
 
-    assert (
-        test.my_parser("HELLO, je souhaite aLler à la tour eiffel ?./+/><!°?")
-        == "tour eiffel"
-    )
-
 
 def test_parser_empty():
     with pytest.raises(ValueError):
